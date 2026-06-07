@@ -1811,10 +1811,6 @@ input:-webkit-autofill:active {
     .profile-bottom-bar {
         display: none !important;
     }
-    /* Отзывы видны только на мобильных в настройках */
-    .profile-reviews-mobile {
-        display: block !important;
-    }
 }
 
 /* Профиль: основная область (fallback for no media query match) */
@@ -1828,7 +1824,7 @@ input:-webkit-autofill:active {
 .profile-desktop-logout {
     display: none;
 }
-/* Отзывы в настройках скрыты на десктопе, показываются на мобильных */
+/* Отзывы в настройках скрыты */
 .profile-reviews-mobile {
     display: none;
 }
@@ -2529,7 +2525,7 @@ input:-webkit-autofill:active {
 }
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
 }
 .reviews-page .review-card {
