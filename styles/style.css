@@ -1971,7 +1971,11 @@ input:-webkit-autofill:active {
     transition: background 0.3s;
 }
 [data-theme="dark"] .theme-toggle {
-    background: var(--accent);
+    background: #444;
+}
+[data-theme="dark"] .theme-toggle.active,
+[data-theme="dark"] .notification-toggle.active {
+    background: var(--accent) !important;
 }
 .theme-toggle::after {
     content: '';
@@ -1985,7 +1989,8 @@ input:-webkit-autofill:active {
     transition: transform 0.3s;
     box-shadow: 0 1px 4px rgba(0,0,0,0.15);
 }
-[data-theme="dark"] .theme-toggle::after {
+.theme-toggle.active::after,
+.notification-toggle.active::after {
     transform: translateX(24px);
 }
 
