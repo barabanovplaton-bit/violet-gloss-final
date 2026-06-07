@@ -1793,6 +1793,7 @@ input:-webkit-autofill:active {
     }
     .profile-layout {
         flex-direction: column;
+        padding-top: 60px;
     }
     .profile-main {
         padding: 16px 20px;
@@ -1810,6 +1811,10 @@ input:-webkit-autofill:active {
     .profile-bottom-bar {
         display: none !important;
     }
+    /* Отзывы видны только на мобильных в настройках */
+    .profile-reviews-mobile {
+        display: block !important;
+    }
 }
 
 /* Профиль: основная область (fallback for no media query match) */
@@ -1821,6 +1826,10 @@ input:-webkit-autofill:active {
 /* По умолчанию мобильная кнопка выхода и desktop-logout скрыты */
 .profile-mobile-logout,
 .profile-desktop-logout {
+    display: none;
+}
+/* Отзывы в настройках скрыты на десктопе, показываются на мобильных */
+.profile-reviews-mobile {
     display: none;
 }
 
@@ -1969,6 +1978,8 @@ input:-webkit-autofill:active {
     position: relative;
     cursor: pointer;
     transition: background 0.3s;
+    flex-shrink: 0;
+    overflow: hidden;
 }
 [data-theme="dark"] .theme-toggle {
     background: #444;
@@ -3204,9 +3215,11 @@ select {
     padding: 16px 20px;
     background: var(--white);
     border-bottom: 1px solid rgba(0,0,0,0.06);
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 50;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 [data-theme="dark"] .profile-mobile-topbar {
     background: #1E1E1E;
